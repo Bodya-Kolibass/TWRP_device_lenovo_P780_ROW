@@ -1,0 +1,1 @@
+# TWRP_device_lenovo_P780_ROW
