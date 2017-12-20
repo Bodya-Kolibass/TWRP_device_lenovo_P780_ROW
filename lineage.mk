@@ -1,0 +1,8 @@
+$(call inherit-product, device/lenovo/P780_ROW/device.mk)
+
+PRODUCT_NAME := lineage_P780_ROW
+PRODUCT_DEVICE := P780_ROW
+PRODUCT_BRAND := Lenovo
+PRODUCT_MODEL := Lenovo P780
+PRODUCT_MANUFACTURER := LENOVO
+TARGET_BOOTLOADER_BOARD_NAME := prada

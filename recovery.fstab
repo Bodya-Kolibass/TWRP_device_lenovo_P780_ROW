@@ -5,7 +5,6 @@
 /boot		emmc	/dev/bootimg		flags=display="Boot";backup=1
 /recovery	emmc	/dev/recovery		flags=display="Recovery";backup=1;flashimg=1
 /sec_ro		emmc	/emmc@sec_ro		flags=display="Sec_ro";backup=1
-/misc           emmc    /dev/misc               
 /logo		emmc	/dev/logo		flags=display="Boot logo";backup=1;flashimg=1
 /system		ext4	/emmc@android           flags=display="System";backup=1
 /cache		ext4	/emmc@cache             flags=display="Cache";backup=1
