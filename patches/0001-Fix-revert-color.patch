@@ -1,0 +1,47 @@
+From 18410a454db6169a961f466ad7c7bf188556529a Mon Sep 17 00:00:00 2001
+From: Bodya-Kolibass <Mr.Kolibass@gmail.com>
+Date: Fri, 22 Dec 2017 21:21:04 +0300
+Subject: [PATCH 1/4] Fix revert color
+
+---
+ minuitwrp/graphics_fbdev.cpp   | 4 ++--
+ minuitwrp/graphics_overlay.cpp | 4 ++--
+ 2 files changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/minuitwrp/graphics_fbdev.cpp b/minuitwrp/graphics_fbdev.cpp
+index a1c42d0..84be60c 100644
+--- a/minuitwrp/graphics_fbdev.cpp
++++ b/minuitwrp/graphics_fbdev.cpp
+@@ -209,10 +209,10 @@ static GRSurface* fbdev_init(minui_backend* backend) {
+     if (vi.bits_per_pixel == 16) {
+         printf("setting GGL_PIXEL_FORMAT_RGB_565\n");
+         gr_framebuffer[0].format = GGL_PIXEL_FORMAT_RGB_565;
+-    } else if (vi.red.offset == 8 || vi.red.offset == 16) {
++    } else if (vi.red.offset == 0 || vi.red.offset == 16) {
+         printf("setting GGL_PIXEL_FORMAT_BGRA_8888\n");
+         gr_framebuffer[0].format = GGL_PIXEL_FORMAT_BGRA_8888;
+-    } else if (vi.red.offset == 0) {
++    } else if (vi.red.offset == 8) {
+         printf("setting GGL_PIXEL_FORMAT_RGBA_8888\n");
+         gr_framebuffer[0].format = GGL_PIXEL_FORMAT_RGBA_8888;
+     } else if (vi.red.offset == 24) {
+diff --git a/minuitwrp/graphics_overlay.cpp b/minuitwrp/graphics_overlay.cpp
+index 84ea6e0..e8001ac 100644
+--- a/minuitwrp/graphics_overlay.cpp
++++ b/minuitwrp/graphics_overlay.cpp
+@@ -603,10 +603,10 @@ static GRSurface* overlay_init(minui_backend* backend) {
+     if (vi.bits_per_pixel == 16) {
+         printf("setting GGL_PIXEL_FORMAT_RGB_565\n");
+         gr_framebuffer.format = GGL_PIXEL_FORMAT_RGB_565;
+-    } else if (vi.red.offset == 8 || vi.red.offset == 16) {
++    } else if (vi.red.offset == 0 || vi.red.offset == 16) {
+         printf("setting GGL_PIXEL_FORMAT_BGRA_8888\n");
+         gr_framebuffer.format = GGL_PIXEL_FORMAT_BGRA_8888;
+-    } else if (vi.red.offset == 0) {
++    } else if (vi.red.offset == 8) {
+         printf("setting GGL_PIXEL_FORMAT_RGBA_8888\n");
+         gr_framebuffer.format = GGL_PIXEL_FORMAT_RGBA_8888;
+     } else if (vi.red.offset == 24) {
+-- 
+2.7.4
+

@@ -1,6 +1,6 @@
 # TWRP device tree for lenovo P780_ROW
 
-# How to build:
+How to build:
 --------------------------------------------
     $ mkdir LineageOS11
     $ cd ./LineageOS11
@@ -11,6 +11,7 @@
     $ cd ../device && mkdir lenovo && mkdir ./lenovo/P780_ROW
     $ git clone https://github.com/Bodya-Kolibass/TWRP_device_lenovo_P780_ROW.git ./lenovo/P780_ROW
     $ cd ..
+    $ . device/lenovo/P780_ROW/patches/apply-patch.sh
     $ . build/envsetup.sh
     $ lunch lineage_P780_ROW-eng #(or -userdebug)
     $ make clean
