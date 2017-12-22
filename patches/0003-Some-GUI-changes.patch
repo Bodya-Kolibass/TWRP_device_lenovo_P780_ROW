@@ -1,0 +1,51 @@
+From 95a1d98b821820fb367c9dbd9dc0cf96aace4379 Mon Sep 17 00:00:00 2001
+From: Bodya-Kolibass <Mr.Kolibass@gmail.com>
+Date: Fri, 22 Dec 2017 22:09:44 +0300
+Subject: [PATCH 3/4] Some GUI changes
+
+---
+ gui/theme/common/portrait.xml  | 4 ++--
+ gui/theme/portrait_hdpi/ui.xml | 4 ++--
+ 2 files changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/gui/theme/common/portrait.xml b/gui/theme/common/portrait.xml
+index f163bea..6cde9de 100644
+--- a/gui/theme/common/portrait.xml
++++ b/gui/theme/common/portrait.xml
+@@ -2603,7 +2603,7 @@
+ 
+ 			<button style="checkbox">
+ 				<condition var1="tw_mount_system_ro" op="=" var2="0"/>
+-				<placement x="%indent%" y="%row15a_y%" textplacement="6"/>
++				<placement x="%indent%" y="%row16_y%" textplacement="6"/>
+ 				<text>{@mount_sys_ro_chk=Mount system partition read-only}</text>
+ 				<image resource="checkbox_false"/>
+ 				<action function="mountsystemtoggle">1</action>
+@@ -2611,7 +2611,7 @@
+ 
+ 			<button style="checkbox">
+ 				<condition var1="tw_mount_system_ro" op="!=" var2="0"/>
+-				<placement x="%indent%" y="%row15a_y%" textplacement="6"/>
++				<placement x="%indent%" y="%row16_y%" textplacement="6"/>
+ 				<text>{@mount_sys_ro_chk=Mount system partition read-only}</text>
+ 				<image resource="checkbox_true"/>
+ 				<actions>
+diff --git a/gui/theme/portrait_hdpi/ui.xml b/gui/theme/portrait_hdpi/ui.xml
+index 0545b3f..10fcfda 100644
+--- a/gui/theme/portrait_hdpi/ui.xml
++++ b/gui/theme/portrait_hdpi/ui.xml
+@@ -196,9 +196,9 @@
+ 		<variable name="fileselector_filemanager_height" value="1376"/>
+ 		<variable name="partitionlist_spacing" value="0"/>
+ 		<variable name="partitionlist_storage_height" value="544"/>
+-		<variable name="partitionlist_flashimage_height" value="544"/>
++		<variable name="partitionlist_flashimage_height" value="768"/>
+ 		<variable name="partitionlist_wipe_height" value="1088"/>
+-		<variable name="partitionlist_mount_height" value="832"/>
++		<variable name="partitionlist_mount_height" value="880"/>
+ 		<variable name="partitionlist_backup_height" value="768"/>
+ 		<variable name="listbox_timezone_height" value="756"/>
+ 		<variable name="listbox_settings_height" value="960"/>
+-- 
+2.7.4
+

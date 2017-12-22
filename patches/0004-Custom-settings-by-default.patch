@@ -1,0 +1,70 @@
+From 5e79569a95a7f71c85c3f0c330dd847146800be1 Mon Sep 17 00:00:00 2001
+From: Bodya-Kolibass <Mr.Kolibass@gmail.com>
+Date: Fri, 22 Dec 2017 22:28:59 +0300
+Subject: [PATCH 4/4] Custom settings by default
+
+---
+ data.cpp | 20 ++++++++++----------
+ 1 file changed, 10 insertions(+), 10 deletions(-)
+
+diff --git a/data.cpp b/data.cpp
+index 5d05d2b..dc2e7a3 100644
+--- a/data.cpp
++++ b/data.cpp
+@@ -682,17 +682,17 @@ void DataManager::SetDefaultValues()
+ 	mPersist.SetValue(TW_DISABLE_FREE_SPACE_VAR, "0");
+ 	mPersist.SetValue(TW_FORCE_DIGEST_CHECK_VAR, "0");
+ 	mPersist.SetValue(TW_USE_COMPRESSION_VAR, "0");
+-	mPersist.SetValue(TW_TIME_ZONE_VAR, "CST6CDT,M3.2.0,M11.1.0");
+-	mPersist.SetValue(TW_GUI_SORT_ORDER, "1");
++	mPersist.SetValue(TW_TIME_ZONE_VAR, "SAUST-3");
++	mPersist.SetValue(TW_GUI_SORT_ORDER, "0");
+ 	mPersist.SetValue(TW_RM_RF_VAR, "0");
+ 	mPersist.SetValue(TW_SKIP_DIGEST_CHECK_VAR, "0");
+-	mPersist.SetValue(TW_SKIP_DIGEST_GENERATE_VAR, "0");
++	mPersist.SetValue(TW_SKIP_DIGEST_GENERATE_VAR, "1");
+ 	mPersist.SetValue(TW_SDEXT_SIZE, "0");
+ 	mPersist.SetValue(TW_SWAP_SIZE, "0");
+ 	mPersist.SetValue(TW_SDPART_FILE_SYSTEM, "ext3");
+-	mPersist.SetValue(TW_TIME_ZONE_GUISEL, "CST6;CDT,M3.2.0,M11.1.0");
++	mPersist.SetValue(TW_TIME_ZONE_GUISEL, "SAUST-3;SAUDT");
+ 	mPersist.SetValue(TW_TIME_ZONE_GUIOFFSET, "0");
+-	mPersist.SetValue(TW_TIME_ZONE_GUIDST, "1");
++	mPersist.SetValue(TW_TIME_ZONE_GUIDST, "0");
+ 	mData.SetValue(TW_ACTION_BUSY, "0");
+ 	mData.SetValue("tw_wipe_cache", "0");
+ 	mData.SetValue("tw_wipe_dalvik", "0");
+@@ -707,7 +707,7 @@ void DataManager::SetDefaultValues()
+ 	mData.SetValue("tw_terminal_state", "0");
+ 	mData.SetValue("tw_background_thread_running", "0");
+ 	mData.SetValue(TW_RESTORE_FILE_DATE, "0");
+-	mPersist.SetValue("tw_military_time", "0");
++	mPersist.SetValue("tw_military_time", "1");
+ 
+ #ifdef TW_INCLUDE_CRYPTO
+ 	mConst.SetValue(TW_USE_SHA2, "1");
+@@ -820,8 +820,8 @@ void DataManager::SetDefaultValues()
+ 	mConst.SetValue("tw_has_mtp", "0");
+ 	mConst.SetValue("tw_mtp_enabled", "0");
+ #endif
+-	mPersist.SetValue("tw_mount_system_ro", "2");
+-	mPersist.SetValue("tw_never_show_system_ro_page", "0");
++	mPersist.SetValue("tw_mount_system_ro", "0");
++	mPersist.SetValue("tw_never_show_system_ro_page", "1");
+ 	mPersist.SetValue("tw_language", EXPAND(TW_DEFAULT_LANGUAGE));
+ 	LOGINFO("LANG: %s\n", EXPAND(TW_DEFAULT_LANGUAGE));
+ 
+@@ -839,8 +839,8 @@ void DataManager::SetDefaultValues()
+ 	mConst.SetValue("tw_oem_build", "1");
+ #else
+ 	mConst.SetValue("tw_oem_build", "0");
+-	mPersist.SetValue("tw_app_prompt", "1");
+-	mPersist.SetValue("tw_app_install_system", "1");
++	mPersist.SetValue("tw_app_prompt", "0");
++	mPersist.SetValue("tw_app_install_system", "0");
+ 	mData.SetValue("tw_app_install_status", "0"); // 0 = no status, 1 = not installed, 2 = already installed
+ #endif
+ 
+-- 
+2.7.4
+
