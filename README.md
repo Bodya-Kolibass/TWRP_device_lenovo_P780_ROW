@@ -1,6 +1,7 @@
 # TWRP device tree for lenovo P780_ROW
 
-# How to build
+# How to build:
+--------------------------------------------
     $ mkdir LineageOS11
     $ cd ./LineageOS11
     $ repo init -u https://github.com/LineageOS/android.git -b cm-11.0
