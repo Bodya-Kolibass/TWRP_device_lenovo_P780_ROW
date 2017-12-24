@@ -1,0 +1,24 @@
+From d0c39b9fb34d1a9bf5f5d2322d2016e7615cd332 Mon Sep 17 00:00:00 2001
+From: Bodya-Kolibass <Mr.Kolibass@gmail.com>
+Date: Sat, 23 Dec 2017 00:09:43 +0300
+Subject: [PATCH 5/5] Fix mass_storage mode
+
+---
+ etc/init.recovery.usb.rc | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/etc/init.recovery.usb.rc b/etc/init.recovery.usb.rc
+index 8ef20e0..e6dfd05 100644
+--- a/etc/init.recovery.usb.rc
++++ b/etc/init.recovery.usb.rc
+@@ -14,6 +14,7 @@ on property:sys.usb.config=none
+ 
+ on property:sys.usb.config=mass_storage,adb
+     write /sys/class/android_usb/android0/enable 0
++    write /sys/class/android_usb/android0/idProduct 4ee2
+     write /sys/class/android_usb/android0/functions ${sys.usb.config}
+     write /sys/class/android_usb/android0/enable 1
+ 
+-- 
+2.7.4
+
