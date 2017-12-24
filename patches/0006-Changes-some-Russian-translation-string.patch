@@ -1,0 +1,32 @@
+From 4fdd1d8cefeca799d6f1a9f706d4c89727796ba7 Mon Sep 17 00:00:00 2001
+From: Bodya-Kolibass <Mr.Kolibass@gmail.com>
+Date: Sun, 24 Dec 2017 20:37:25 +0300
+Subject: [PATCH 6/6] Changes some Russian translation string
+
+---
+ gui/theme/common/languages/ru.xml | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/gui/theme/common/languages/ru.xml b/gui/theme/common/languages/ru.xml
+index 76eff88..afdbf3f 100644
+--- a/gui/theme/common/languages/ru.xml
++++ b/gui/theme/common/languages/ru.xml
+@@ -269,12 +269,12 @@
+ 		<string name="decrypt_data_btn">Расшифровать данные</string>
+ 		<string name="disable_mtp_btn">Выключить MTP</string>
+ 		<string name="enable_mtp_btn">Включить MTP</string>
+-		<string name="mount_usb_storage_btn">Включить UMS</string>
++		<string name="mount_usb_storage_btn">Режим USB-накопителя</string>
+ 		<string name="usb_storage_hdr">USB накопитель</string>
+ 		<string name="usb_stor_mnt1">Режим USB накопителя включен</string>
+ 		<string name="usb_stor_mnt2">Перед отключением вашего устройства от компьютера,</string>
+-		<string name="usb_stor_mnt3">выполните размонтирование (выключите UMS)!</string>
+-		<string name="unmount_btn">Выключить UMS</string>
++		<string name="usb_stor_mnt3">выполните размонтирование (Выкл. USB-накопитель)!</string>
++		<string name="unmount_btn">Выкл. USB-накопитель</string>
+ 		<string name="rb_system_btn">Система</string>
+ 		<string name="rb_poweroff_btn">Выключение</string>
+ 		<string name="rb_recovery_btn">Рекавери</string>
+-- 
+2.7.4
+
