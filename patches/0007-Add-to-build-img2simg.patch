@@ -1,0 +1,60 @@
+commit 0105cc41fc99ae49a47c4d46c97b08eafca8c368
+Author: Bodya-Kolibass <Mr.Kolibass@gmail.com>
+Date:   Thu Mar 22 10:10:46 2018 +0300
+
+    Add to build img2simg (Android sparse image creation tool)
+
+diff --git a/Android.mk b/Android.mk
+index 85cdd32..05b18df 100644
+--- a/Android.mk
++++ b/Android.mk
+@@ -371,7 +371,8 @@ LOCAL_ADDITIONAL_DEPENDENCIES += \
+     permissive.sh \
+     simg2img_twrp \
+     libbootloader_message \
+-    init.recovery.service.rc
++    init.recovery.service.rc \
++    img2simg_twrp
+ 
+ ifneq ($(TARGET_ARCH), arm64)
+     ifneq ($(TARGET_ARCH), x86_64)
+@@ -678,6 +679,7 @@ include $(commands_recovery_local_path)/injecttwrp/Android.mk \
+     $(commands_recovery_local_path)/etc/Android.mk \
+     $(commands_recovery_local_path)/toybox/Android.mk \
+     $(commands_recovery_local_path)/simg2img/Android.mk \
++    $(commands_recovery_local_path)/img2simg/Android.mk \
+     $(commands_recovery_local_path)/adbbu/Android.mk \
+     $(commands_recovery_local_path)/libpixelflinger/Android.mk \
+     $(commands_recovery_local_path)/twrpDigest/Android.mk \
+diff --git a/img2simg/Android.mk b/img2simg/Android.mk
+new file mode 100644
+index 0000000..575b3a5
+--- /dev/null
++++ b/img2simg/Android.mk
+@@ -0,0 +1,14 @@
++LOCAL_PATH := system/core/libsparse
++
++include $(CLEAR_VARS)
++LOCAL_SRC_FILES := img2simg.c \
++	sparse_crc32.c
++LOCAL_MODULE := img2simg_twrp
++LOCAL_MODULE_STEM := img2simg
++LOCAL_MODULE_PATH := $(TARGET_RECOVERY_ROOT_OUT)/sbin
++LOCAL_MODULE_TAGS := optional
++LOCAL_SHARED_LIBRARIES := \
++    libsparse \
++    libz
++LOCAL_CFLAGS := -Werror
++include $(BUILD_EXECUTABLE)
+diff --git a/prebuilt/Android.mk b/prebuilt/Android.mk
+index f88f48f..1d4cb16 100644
+--- a/prebuilt/Android.mk
++++ b/prebuilt/Android.mk
+@@ -39,6 +39,7 @@ RELINK_SOURCE_FILES += $(TARGET_OUT_EXECUTABLES)/mke2fs
+ RELINK_SOURCE_FILES += $(TARGET_OUT_EXECUTABLES)/tune2fs
+ RELINK_SOURCE_FILES += $(TARGET_OUT_EXECUTABLES)/resize2fs
+ RELINK_SOURCE_FILES += $(TARGET_RECOVERY_ROOT_OUT)/sbin/simg2img
++RELINK_SOURCE_FILES += $(TARGET_RECOVERY_ROOT_OUT)/sbin/img2simg
+ ifneq ($(TARGET_ARCH), x86_64)
+     RELINK_SOURCE_FILES += $(TARGET_OUT_EXECUTABLES)/linker
+ endif

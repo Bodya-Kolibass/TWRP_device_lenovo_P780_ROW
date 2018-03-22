@@ -8,7 +8,7 @@
 /logo		emmc	/dev/logo		flags=display="Boot logo";backup=1;flashimg=1
 /cache		ext4	/emmc@cache             flags=display="Cache";backup=1
 /system		ext4	/emmc@android           flags=display="System";backup=1
-/system_image	emmc	/emmc@android		flags=display="System image";backup=0;flashimg=1
+/system_image	emmc	/emmc@android		flags=display="System image";backup=1;flashimg=1
 /data		ext4	/emmc@usrdata           flags=display="Data";backup=1
 /external_sd	auto	/dev/block/mmcblk1p1	/dev/block/mmcblk1	flags=display="External SD-card";storage;wipeingui;removable;backup=0
 /usbotg		auto    /dev/block/sda1		/dev/block/sda		flags=display="Usb-Otg";storage;removable;backup=0
