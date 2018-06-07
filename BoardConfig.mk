@@ -40,5 +40,5 @@ TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/devices/platform/mt_usb/musb-hdrc.0/gad
 TW_MAX_BRIGHTNESS := 255
 TW_CUSTOM_BATTERY_PATH := "/sys/devices/platform/battery/power_supply/battery"
 TW_THEME := portrait_hdpi
-TW_DEVICE_VERSION := 1 ROW+ by Bodya-Kolibass 4PDA
+TW_DEVICE_VERSION := 2 ROW+ by Bodya-Kolibass 4PDA
 RECOVERY_SDCARD_ON_DATA := true
